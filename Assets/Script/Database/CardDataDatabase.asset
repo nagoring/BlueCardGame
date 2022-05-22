@@ -29,11 +29,11 @@ MonoBehaviour:
     eCardType: 0
     power: -10
   - eCardName: 5
-    eCardType: 2
+    eCardType: 0
     power: -20
   - eCardName: 6
     eCardType: 1
     power: 10
-  - eCardName: 0
+  - eCardName: 7
     eCardType: 2
     power: 0

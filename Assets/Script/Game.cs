@@ -38,6 +38,7 @@ public class Game : Singleton<Game>
 		if (cardData.eCardType == ECardType.PlusMinus)
 		{
 			_totalPower += cardData.power;
+			Debug.Log(_totalPower);
 		}
 		else if (cardData.eCardType == ECardType.Times)
 		{
@@ -47,7 +48,7 @@ public class Game : Singleton<Game>
 		{
 			_totalPower = 0;
 		}
-		Debug.Log($"かくとく:{_totalPower}");
+		Debug.Log($"かくとく:{_totalPower}," + cardData.eCardType.ToString());
 		if (_totalPower <= 0 && cardData.eCardName != ECardName.Orb)
 		{
 			Debug.Log($"あなたの負け");
@@ -72,7 +73,7 @@ public class Game : Singleton<Game>
 		{
 			int index = i;
 			CardData cardData = playerCardList[index];
-			cardUiBtnArray[index].GetComponentInChildren<Text>().text = cardData.eCardName.ToString();
+			cardUiBtnArray[index].GetComponentInChildren<Text>().text = cardData.eCardName.ToString() + ":" + cardData.power;
 		}
 	}
 
