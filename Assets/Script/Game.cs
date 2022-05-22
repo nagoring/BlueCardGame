@@ -48,7 +48,7 @@ public class Game : Singleton<Game>
 			_totalPower = 0;
 		}
 		Debug.Log($"かくとく:{_totalPower}");
-		if (_totalPower <= 0)
+		if (_totalPower <= 0 && cardData.eCardName != ECardName.Orb)
 		{
 			Debug.Log($"あなたの負け");
 		}
@@ -57,6 +57,7 @@ public class Game : Singleton<Game>
 	public void PushReset()
 	{
 		DeleteCard();
+		_totalPower = 0;
 		CreateCardUi();
 		for (int i = 0; i < 15; i++)
 		{
